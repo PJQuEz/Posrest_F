@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-manage',
+  templateUrl: './manage.component.html',
+  styleUrls: ['./manage.component.scss']
 })
-export class AppComponent {
-  availableProducts: Array<Product> = [];
+export class ManageComponent implements OnInit {
+availableProducts: Array<Product> = [];
     shoppingBasket: Array<Product> = [];
     shoppingBasket2: Array<Product> = [];
     
@@ -17,6 +17,11 @@ export class AppComponent {
         this.availableProducts.push(new Product('Red Shirt', 5, 12));
         this.availableProducts.push(new Product('Blue Jeans', 4, 60));
     }
+
+  ngOnInit() {
+  }
+
+
 
     orderedProduct($event: any) {
         let orderedProduct: Product = $event.dragData;
